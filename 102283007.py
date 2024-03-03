@@ -86,8 +86,8 @@ def zipit(file):
 def send_email(item, email):
     smtp_port = 587
     smtp_server = "smtp.gmail.com"
-    email_from = 
-    pswd = 
+    email_from = ''
+    pswd = ''
     subject = "Your customized mashup"
     body = """
     Hello!
