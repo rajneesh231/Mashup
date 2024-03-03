@@ -12,13 +12,6 @@ from email import encoders
 from moviepy.editor import VideoFileClip, concatenate_audioclips
 from pytube import YouTube
 from pytube.exceptions import PytubeError
-import subprocess
-
-try:
-    subprocess.run(["pip", "install", "moviepy"])
-    subprocess.run(["pip", "install", "numpy", "--quiet"])  # Optional, but often needed
-except Exception as e:
-    print(f"Error installing required libraries: {e}")
 
 
 def download_videos_and_convert_into_audio(singer, n):
