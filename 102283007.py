@@ -78,8 +78,8 @@ def zipit(file):
 def send_email(item, email):
     smtp_port = 587
     smtp_server = "smtp.gmail.com"
-    email_from = ''
-    pswd = ''
+    email_from = ""
+    pswd = ""
     subject = "Your customized mashup"
     body = """
     Hello!
@@ -125,6 +125,8 @@ def create_mashup(singer, num_videos, duration, email):
 
 
 with st.form(key="Mashup Form"):
+    st.write('Will not work, smtp server not set up with email and password due to security reasons. can check output on https://github.com/rajneesh231/mashup')
+
     singer_name = st.text_input(label="Enter Singer's Name", value="")
     num_of_videos = st.number_input(label="Number of Videos to Include", value=0)
     video_duration = st.number_input(
@@ -152,8 +154,6 @@ with st.form(key="Mashup Form"):
                         os.unlink(file_path)
 
             create_mashup(singer_name, num_of_videos, video_duration, user_email)
-            os.remove("concat.mp3")
-            os.remove("mashup.zip")
             st.success("Success! Your mashup will shortly arrive in your mailbox.")
 
 
