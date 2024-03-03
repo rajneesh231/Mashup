@@ -3,7 +3,6 @@ import urllib
 import re
 import zipfile
 import os
-import shutil
 import streamlit as st
 from time import sleep
 from email.mime.text import MIMEText
@@ -16,7 +15,7 @@ from pytube.exceptions import PytubeError
 import subprocess
 
 try:
-    subprocess.run(["pip", "install", "moviepy", "--quiet"])
+    subprocess.run(["pip", "install", "moviepy"])
     subprocess.run(["pip", "install", "numpy", "--quiet"])  # Optional, but often needed
 except Exception as e:
     print(f"Error installing required libraries: {e}")
